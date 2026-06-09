@@ -1,0 +1,25 @@
+# Business assumptions and strategy thresholds for lending analysis
+loss_given_default: 0.6        # fraction of loan lost when borrower defaults
+profit_margin: 0.05           # fraction profit on an approved non-default loan
+default_loan_amount: 10000    # used if dataset has no loan amount column
+thresholds:
+  - 0.30
+  - 0.40
+  - 0.50
+  - 0.60
+  - 0.70
+  - 0.80
+  - 0.90
+threshold_optimization:
+  threshold_min: 0.30
+  threshold_max: 0.90
+  threshold_step: 0.10
+  objective: "min_expected_loss_with_constraints"
+  constraints:
+    min_approval_rate: 0.80
+    min_precision: 0.90
+    min_recall: 0.70
+strategies:
+  Growth: 0.60
+  Balanced: 0.50
+  Conservative: 0.30

@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+fuzzywuzzy
+python-Levenshtein
+reportlab
+xgboost
+lightgbm
+openai
+pyyaml
+shap
